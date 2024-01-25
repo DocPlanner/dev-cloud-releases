@@ -1,0 +1,26 @@
+{
+    "version": "2.17.0",
+    "description": "CLI to develop applications in the cloud",
+    "homepage": "https://github.com/DocPlanner/dev-cloud",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/DocPlanner/dev-cloud-releases/download/2.17.0/dev-2.17.0-win-x64.zip",
+            "hash": "1e8bf2e568c26268eb9aa4504d07fe854cf2d57b303e47b4de2f8d4240995a6c"
+        }
+    },
+    "bin": "dev.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/DocPlanner/dev-cloud-releases/download/$version/dev-$version-win-x64.zip"
+            }
+        }
+    },
+    "depends": [
+        "kubectl",
+        "devspace",
+        "aws"
+    ]
+}
