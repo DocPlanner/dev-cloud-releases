@@ -1,5 +1,8 @@
 on:
   workflow_dispatch:
+  release:
+    types:
+      - published
   schedule:
     # run every 4 hours
     - cron: '20 */4 * * *'
