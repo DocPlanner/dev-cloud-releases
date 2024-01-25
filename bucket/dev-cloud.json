@@ -1,7 +1,7 @@
 {
     "version": "2.17.0",
     "description": "CLI to develop applications in the cloud",
-    "homepage": "https://github.com/DocPlanner/dev-cloud",
+    "homepage": "https://github.com/DocPlanner/dev-cloud-releases",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
