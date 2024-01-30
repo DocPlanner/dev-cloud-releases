@@ -18,4 +18,5 @@ jobs:
       - name: Auto-PR
         run: |
           iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+          scoop install hub
           ./bin/auto-pr.ps1 -r
