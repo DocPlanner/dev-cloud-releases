@@ -12,6 +12,10 @@ jobs:
     name: update
     runs-on: windows-latest
     steps:
+      - name: "Get latest release"
+        id: latest
+        uses: gregziegan/fetch-latest-release@v2.0.0
+
       - name: Checkout
         uses: actions/checkout@main
 
@@ -21,10 +25,6 @@ jobs:
         run: |
           iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
           .\bin\checkver.ps1 * -u
-
-      - name: "Get latest release"
-        id: latest
-        uses: gregziegan/fetch-latest-release@v2.0.0
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
