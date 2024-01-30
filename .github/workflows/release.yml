@@ -16,7 +16,9 @@ jobs:
         uses: actions/checkout@main
 
       - name: Auto-PR
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
           scoop install hub
-          ./bin/auto-pr.ps1 -r
+          ./bin/auto-pr.ps1 -r -u docplanner/dev-cloud-releases:develop
