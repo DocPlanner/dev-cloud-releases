@@ -15,10 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - name: Install Scoop
-        run: |
-          iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
-
       - name: Auto-PR
         run: |
+          iex "& {$(irm get.scoop.sh)}"
           ./bin/auto-pr.ps1 -r
