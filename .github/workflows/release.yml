@@ -17,5 +17,5 @@ jobs:
 
       - name: Auto-PR
         run: |
-          iex "& {$(irm get.scoop.sh)}"
+          iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
           ./bin/auto-pr.ps1 -r
