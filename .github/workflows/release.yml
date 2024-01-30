@@ -20,5 +20,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
-          scoop install hub
-          ./bin/auto-pr.ps1 -r -u docplanner/dev-cloud-releases:develop
+          .\bin\checkver.ps1 * -u
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
