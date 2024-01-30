@@ -1,4 +1,4 @@
-cask "aws-vault" do
+cask "dev-cloud" do
     arch intel: "amd64"
 
     version "2.17.0"
