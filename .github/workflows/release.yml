@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+  release:
+    types:
+      - published
+
+name: Update release
+
+jobs:
+  update:
+    name: update
+    runs-on: windows-latest
+    steps:
+      - name: Auto-PR
+        run: |
+          ./bin/auto-pr.ps1 -r
