@@ -18,7 +18,7 @@ jobs:
       - name: Install Scoop
         run: |
           Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-          Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+          iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 
       - name: Auto-PR
         run: |
