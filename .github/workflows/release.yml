@@ -15,6 +15,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
+      - name: Install Scoop
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+          Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
       - name: Auto-PR
         run: |
           ./bin/auto-pr.ps1 -r
