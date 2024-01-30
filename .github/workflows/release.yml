@@ -29,6 +29,6 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: "manifests/${{ steps.latest.outputs.name }}"
-          title: "Update manifests to version ${{ steps.latest.outputs.name }}"
+          branch: "manifests/${{ steps.latest.outputs.tag_name }}"
+          title: "Update manifests to version ${{ steps.latest.outputs.tag_name }}"
           body: ""
