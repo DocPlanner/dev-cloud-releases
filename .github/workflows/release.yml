@@ -1,0 +1,33 @@
+on:
+  workflow_dispatch:
+  release:
+    types:
+      - published
+
+name: Update release
+
+jobs:
+  update:
+    name: update
+    runs-on: windows-latest
+    steps:
+      - name: "Get latest release"
+        id: latest
+        uses: gregziegan/fetch-latest-release@v2.0.0
+
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Update manifests
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+          .\bin\checkver.ps1 * -u
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: "manifests/${{ steps.latest.outputs.tag_name }}"
+          title: "Update manifests to version ${{ steps.latest.outputs.tag_name }}"
+          body: ""
