@@ -1,6 +1,9 @@
 cask "dev-cloud" do
+    config_file = './local_config.rb'
+    require config_file if File.file? config_file
+    VENV_VERSION ||= '.'
 
-    version :latest
+    version VENV_VERSION
     sha256 :no_check
 
     url "https://github.com/DocPlanner/dev-cloud-releases/releases/download/#{version}/dev-#{version}-osx-x64.zip"
