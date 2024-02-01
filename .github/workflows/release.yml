@@ -17,6 +17,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@main
+        with:
+          ref: "develop"
 
       - name: Update manifests
         env:
