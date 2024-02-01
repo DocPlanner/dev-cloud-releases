@@ -1,12 +1,12 @@
 {
-    "version": "2.17.1",
+    "version": "2.17.2",
     "description": "CLI to develop applications in the cloud",
     "homepage": "https://github.com/DocPlanner/dev-cloud-releases",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/DocPlanner/dev-cloud-releases/releases/download/2.17.1/dev-2.17.1-win-x64.zip",
-            "hash": "d4b05ea1f2457cf121e3a8e0f11759b37f9a96293c160ae682b717480dd3643a"
+            "url": "https://github.com/DocPlanner/dev-cloud-releases/releases/download/2.17.2/dev-2.17.2-win-x64.zip",
+            "hash": "d91ce72eb0456ecd022c3f996f733bfbce1a21321e5e893f111a9f34f494c261"
         }
     },
     "bin": "dev.exe",
