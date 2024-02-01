@@ -1,6 +1,6 @@
 cask "dev-cloud" do
 
-    version :latest
+    version "2.17.0"
     sha256 :no_check
 
     url "https://github.com/DocPlanner/dev-cloud-releases/releases/download/#{version}/dev-#{version}-osx-x64.zip"
