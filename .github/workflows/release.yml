@@ -7,8 +7,8 @@ on:
 name: Update release
 
 jobs:
-  update:
-    name: update
+  update-scoop:
+    name: Update scoop manifests
     runs-on: windows-latest
     steps:
       - name: "Get latest release"

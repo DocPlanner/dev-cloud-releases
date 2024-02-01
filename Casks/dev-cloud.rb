@@ -1,7 +1,7 @@
 cask "dev-cloud" do
 
     version "2.17.0"
-    sha256 "2AD52B7EDCEE543B28E01559C5DCC04B47244CD8A39A212613C1EC6117053E2C"
+    sha256 :no_check
 
     url "https://github.com/DocPlanner/dev-cloud-releases/releases/download/#{version}/dev-#{version}-osx-x64.zip"
     name "Dev Cloud"
@@ -9,6 +9,12 @@ cask "dev-cloud" do
     homepage "https://github.com/DocPlanner/dev-cloud"
 
     binary "dev"
+    auto_updates true
+
+    livecheck do
+      url "https://github.com/DocPlanner/dev-cloud-releases"
+      strategy :github_latest
+    end
 
     depends_on formula: "awscli"
     depends_on formula: "devspace"
