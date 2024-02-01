@@ -1,4 +1,4 @@
-config_file = './local_config.rb'  
+config_file = './local_config.rb'
 require config_file if File.file? config_file
 VENV_VERSION ||= '.'
 
