@@ -24,10 +24,11 @@ jobs:
         run: |
           iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
           .\bin\checkver.ps1 * -u
+          echo "VENV_VERSION='${{ steps.latest.outputs.tag_name }}'" | Out-File -FilePath .\Casks\local_config.rb
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
         with:
           branch: "manifests/${{ steps.latest.outputs.tag_name }}"
           title: "Update manifests to version ${{ steps.latest.outputs.tag_name }}"
-          body: ""
+          body: "Update manifests to version ${{ steps.latest.outputs.tag_name }}."
