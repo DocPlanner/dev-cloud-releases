@@ -1,6 +1,4 @@
-config_file = './local_config.rb'
-require config_file if File.file? config_file
-VENV_VERSION ||= '.'
+require_relative 'local_config.rb'
 
 cask "dev-cloud" do
 
