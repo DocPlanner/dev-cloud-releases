@@ -26,7 +26,7 @@ jobs:
         run: |
           iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
           .\bin\checkver.ps1 * -u
-          echo "VENV_VERSION='${{ steps.latest.outputs.tag_name }}'" | Out-File -FilePath .\Casks\local_config.rb
+          .\bin\update-cask-version.ps1 -NewVersion "${{ steps.latest.outputs.tag_name }}" -FilePath .\Casks\dev-cloud.rb
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
