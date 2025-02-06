@@ -1,8 +1,6 @@
-require_relative 'local_config.rb'
-
 cask "dev-cloud" do
 
-  version VENV_VERSION
+  version "2.22.1"
   sha256 :no_check
 
   url "https://github.com/DocPlanner/dev-cloud-releases/releases/download/#{version}/dev-#{version}-osx-x64.zip"

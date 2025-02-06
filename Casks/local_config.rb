@@ -1,1 +1,0 @@
-VENV_VERSION='2.22.1'
