@@ -1,6 +1,6 @@
 cask "dev-cloud" do
 
-  version "2.22.1"
+  version "2.22.2"
   sha256 :no_check
 
   url "https://github.com/DocPlanner/dev-cloud-releases/releases/download/#{version}/dev-#{version}-osx-x64.zip"
@@ -20,3 +20,4 @@ cask "dev-cloud" do
   depends_on formula: "devspace"
   depends_on formula: "kubernetes-cli"
 end
+
