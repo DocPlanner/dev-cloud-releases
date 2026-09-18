@@ -16,7 +16,7 @@ jobs:
         uses: gregziegan/fetch-latest-release@v2.0.0
 
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         with:
           ref: "develop"
 
@@ -29,7 +29,7 @@ jobs:
           .\bin\update-cask-version.ps1 -NewVersion "${{ steps.latest.outputs.tag_name }}" -FilePath .\Casks\dev-cloud.rb
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         with:
           branch: "manifests/${{ steps.latest.outputs.tag_name }}"
           title: "Update manifests to version ${{ steps.latest.outputs.tag_name }}"
